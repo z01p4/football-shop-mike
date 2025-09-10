@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin:0; background:#0b0b0b; color:#f2f2f2; }
+.container { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+h1 { margin: 0 0 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card { background:#131313; border:1px solid #2a2a2a; border-radius: 12px; overflow: hidden; }
+.thumb { position: relative; aspect-ratio: 4/3; background:#1a1a1a; }
+.thumb img { width:100%; height:100%; object-fit: cover; display:block; }
+.badge { position:absolute; top:8px; left:8px; background:#ffd400; color:#111; font-weight:600; padding:4px 8px; border-radius: 999px; font-size: 12px; }
+.body { padding: 12px; }
+.name { margin:0 0 4px; font-size: 18px; }
+.category { margin:0 0 8px; color:#bdbdbd; font-size: 12px; text-transform: uppercase; letter-spacing:.06em; }
+.price { margin:0 0 8px; font-weight:700; }
+.desc { margin:0; color:#d7d7d7; font-size: 14px; line-height: 1.4; }

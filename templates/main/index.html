@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ app_name }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="container">
+      <h1>{{ app_name }}</h1>
+      <p>Oleh: <strong>{{ student_name }}</strong> — <em>{{ student_class }}</em></p>
+    </header>
+
+    <main class="container">
+      <section class="grid">
+        {% for p in products %}
+          <article class="card">
+            <div class="thumb">
+              <img src="{{ p.thumbnail }}" alt="{{ p.name }}">
+              {% if p.is_featured %}
+                <span class="badge">Featured</span>
+              {% endif %}
+            </div>
+            <div class="body">
+              <h3 class="name">{{ p.name }}</h3>
+              <p class="category">{{ p.category }}</p>
+              <p class="price">Rp {{ p.price|intcomma }}</p>
+              <p class="desc">{{ p.description }}</p>
+            </div>
+          </article>
+        {% empty %}
+          <p>Belum ada produk.</p>
+        {% endfor %}
+      </section>
+    </main>
+
+    <footer class="container">
+      <small>&copy; {{ app_name }} — {{ student_name }}</small>
+    </footer>
+  </body>
+</html>

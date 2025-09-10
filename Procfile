@@ -1,0 +1,1 @@
+web: gunicorn footballshop_project.wsgi
